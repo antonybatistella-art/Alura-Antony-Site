@@ -3,35 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Projeto Escolar</title>
+    <title>Projeto Escolar Interativo</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <h1>Bem-vindo ao Meu Projeto</h1>
-        <p>Uma página simples criada para a escola usando HTML e CSS</p>
+    <nav class="navbar">
+        <div class="logo">🚀 MeuProjeto</div>
+        <ul class="nav-links">
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#recursos">Recursos</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+        <button id="theme-toggle" class="btn-theme">🌓 Alternar Tema</button>
+    </nav>
+
+    <header id="inicio" class="hero-section">
+        <div class="hero-content">
+            <h1>Trabalho de Tecnologia & Programação</h1>
+            <p>Um site moderno, responsivo e interativo construído do zero no VS Code.</p>
+            <a href="#sobre" class="btn-primary">Saber Mais</a>
+        </div>
     </header>
 
     <main class="container">
-        <section class="card">
-            <h2>Sobre o Projeto</h2>
-            <p>Este é um site básico desenvolvido no VS Code. Ele demonstra como podemos estruturar informações de forma clara e elegante para apresentar qualquer tema escolar.</p>
+        
+        <section id="sobre" class="section-card">
+            <h2>📚 Sobre o Trabalho</h2>
+            <p>Este projeto foi desenvolvido para demonstrar a aplicação prática de tecnologias web no ambiente escolar. Unindo design limpo, interatividade e acessibilidade, o site se adapta a computadores e celulares.</p>
         </section>
 
-        <section class="card">
-            <h2>O que aprendi?</h2>
-            <ul>
-                <li>Estruturar páginas com tags HTML5.</li>
-                <li>Estilizar elementos e cores com CSS.</li>
-                <li>Organizar arquivos dentro do VS Code.</li>
-            </ul>
+        <section id="recursos" class="grid-section">
+            <div class="card">
+                <h3>🎨 CSS Avançado</h3>
+                <p>Uso de variáveis CSS para criação de temas e transições suaves nas cores.</p>
+            </div>
+            <div class="card">
+                <h3>📱 Responsividade</h3>
+                <p>O layout se ajusta automaticamente a qualquer tamanho de tela.</p>
+            </div>
+            <div class="card">
+                <h3>⚡ JavaScript</h3>
+                <p>Adiciona comportamento dinâmico, como a troca de tema em tempo real.</p>
+            </div>
         </section>
+
+        <section id="contato" class="section-card">
+            <h2>✉️ Enviar Feedback</h2>
+            <form id="contact-form" onsubmit="enviarFormulario(event)">
+                <div class="form-group">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" required placeholder="Digite seu nome">
+                </div>
+                <div class="form-group">
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" rows="4" required placeholder="O que achou do projeto?"></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Enviar</button>
+            </form>
+            <div id="form-status" class="status-msg hidden"></div>
+        </section>
+
     </main>
 
     <footer>
-        <p>Desenvolvido por [Antony Batistella] &copy; 2026</p>
+        <p>Desenvolvido com 💻 por [Seu Nome] &copy; 2026</p>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
