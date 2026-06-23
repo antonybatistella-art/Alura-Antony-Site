@@ -3,72 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto Escolar Interativo</title>
+    <title>Projeto Super Interativo</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <nav class="navbar">
-        <div class="logo">🚀 MeuProjeto</div>
+        <div class="logo">⚡ MegaProjeto</div>
         <ul class="nav-links">
             <li><a href="#inicio">Início</a></li>
-            <li><a href="#sobre">Sobre</a></li>
-            <li><a href="#recursos">Recursos</a></li>
-            <li><a href="#contato">Contato</a></li>
+            <li><a href="#clicker">Minijogo</a></li>
+            <li><a href="#comentarios">Comentários</a></li>
         </ul>
         <button id="theme-toggle" class="btn-theme">🌓 Alternar Tema</button>
     </nav>
 
     <header id="inicio" class="hero-section">
         <div class="hero-content">
-            <h1>Trabalho de Tecnologia & Programação</h1>
-            <p>Um site moderno, responsivo e interativo construído do zero no VS Code.</p>
-            <a href="#sobre" class="btn-primary">Saber Mais</a>
+            <h1 id="efeito-titulo">Trabalho de Programação...</h1>
+            <p>Hospedado com sucesso no GitHub Pages! Teste todas as interações abaixo.</p>
+            <a href="#clicker" class="btn-primary">Jogar Agora</a>
         </div>
     </header>
 
     <main class="container">
         
-        <section id="sobre" class="section-card">
-            <h2>📚 Sobre o Trabalho</h2>
-            <p>Este projeto foi desenvolvido para demonstrar a aplicação prática de tecnologias web no ambiente escolar. Unindo design limpo, interatividade e acessibilidade, o site se adapta a computadores e celulares.</p>
+        <section id="clicker" class="section-card text-center">
+            <h2>🎮 O Desafio do Clique</h2>
+            <p>Quantas vezes você consegue clicar no botão abaixo? Mostre o seu recorde!</p>
+            <div class="contador-container">
+                <span id="contador-numero">0</span>
+            </div>
+            <button id="btn-contar" class="btn-submit">Clicar! 🚀</button>
+            <button id="btn-resetar" class="btn-reset">Zerar</button>
         </section>
 
-        <section id="recursos" class="grid-section">
-            <div class="card">
-                <h3>🎨 CSS Avançado</h3>
-                <p>Uso de variáveis CSS para criação de temas e transições suaves nas cores.</p>
-            </div>
-            <div class="card">
-                <h3>📱 Responsividade</h3>
-                <p>O layout se ajusta automaticamente a qualquer tamanho de tela.</p>
-            </div>
-            <div class="card">
-                <h3>⚡ JavaScript</h3>
-                <p>Adiciona comportamento dinâmico, como a troca de tema em tempo real.</p>
-            </div>
-        </section>
-
-        <section id="contato" class="section-card">
-            <h2>✉️ Enviar Feedback</h2>
-            <form id="contact-form" onsubmit="enviarFormulario(event)">
+        <section id="comentarios" class="section-card">
+            <h2>💬 Deixe o seu Recado</h2>
+            <p>Escreva uma mensagem. Ela ficará salva no seu navegador!</p>
+            
+            <form id="comment-form" onsubmit="adicionarComentario(event)">
                 <div class="form-group">
-                    <label for="nome">Nome:</label>
-                    <input type="text" id="nome" required placeholder="Digite seu nome">
+                    <label for="autor">Seu Nome:</label>
+                    <input type="text" id="autor" required placeholder="Ex: Professor Carlos">
                 </div>
                 <div class="form-group">
-                    <label for="mensagem">Mensagem:</label>
-                    <textarea id="mensagem" rows="4" required placeholder="O que achou do projeto?"></textarea>
+                    <label for="texto-comentario">Comentário:</label>
+                    <textarea id="texto-comentario" rows="3" required placeholder="O que achou da interatividade deste site?"></textarea>
                 </div>
-                <button type="submit" class="btn-submit">Enviar</button>
+                <button type="submit" class="btn-submit">Publicar Comentário</button>
             </form>
-            <div id="form-status" class="status-msg hidden"></div>
+
+            <div class="comentarios-lista">
+                <h3>Mural de Recados:</h3>
+                <div id="lista-comentarios">
+                    </div>
+            </div>
         </section>
 
     </main>
 
     <footer>
-        <p>Desenvolvido com 💻 por [Seu Nome] &copy; 2026</p>
+        <p>Criado para o Projeto Escolar &copy; 2026</p>
     </footer>
 
     <script src="script.js"></script>
